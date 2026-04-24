@@ -22,7 +22,7 @@ jobs:
 
       - name: Install jsecret
         run: |
-          go install -v github.com/raverrr/jsecret@latest
+          go install -v github.com/raoufmaklouf/jsecret@latest
           echo "$HOME/go/bin" >> $GITHUB_PATH
           jsecret -h | head -5 || echo "jsecret installed"
 
@@ -47,7 +47,7 @@ jobs:
             cat jsecret_results.txt
           else
             echo "No findings."
-            echo "No secrets or interesting data found." > jsecret_results.txt
+            echo "No secrets or sensitive data found." > jsecret_results.txt
           fi
 
       - name: Send Results to Discord
